@@ -49,6 +49,26 @@
 
   <h2>Contact</h2>
   <p>Email: example@email.com</p>
+<button onclick="showMessage()">Click Me</button>
 
+<p id="message"></p>
+
+<script>
+  function showMessage() {
+    document.getElementById("message").innerText = "You clicked the button! 🚀";
+  }
+</script> button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #16a085;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #13856b;
+}
 </body>
 </html>
