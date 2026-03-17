@@ -46,6 +46,12 @@
 button:hover {
   background-color: #13856b;
 }
+input {
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
   </style>
 
 </head>
@@ -69,6 +75,19 @@ button:hover {
 <script>
   function showMessage() {
     document.getElementById("message").innerText = "You clicked the button! 🚀";
+  }
+  <h2>Contact Form</h2>
+
+<input type="text" id="name" placeholder="Enter your name"><br><br>
+
+<button onclick="submitForm()">Submit</button>
+
+<p id="output"></p>
+
+<script>
+  function submitForm() {
+    var name = document.getElementById("name").value;
+    document.getElementById("output").innerText = "Hello " + name + "!";
   }
 </script> 
 </body>
