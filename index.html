@@ -11,21 +11,11 @@
       padding: 20px;
     }
 
-    h1 {
-      color: #2c3e50;
-    }
+    h1 { color: #2c3e50; }
+    h2 { color: #16a085; }
+    p { font-size: 18px; }
 
-    h2 {
-      color: #16a085;
-    }
-
-    p {
-      font-size: 18px;
-    }
-
-    ul {
-      list-style-type: none;
-    }
+    ul { list-style-type: none; }
 
     li {
       background: white;
@@ -33,28 +23,30 @@
       padding: 10px;
       border-radius: 8px;
     }
+
     button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #16a085;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #16a085;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-button:hover {
-  background-color: #13856b;
-}
-input {
-  padding: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
+    button:hover {
+      background-color: #13856b;
+    }
+
+    input {
+      padding: 10px;
+      width: 200px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
   </style>
-
 </head>
+
 <body>
 
   <h1>Hi, I’m Salma 👋</h1>
@@ -68,27 +60,31 @@ input {
 
   <h2>Contact</h2>
   <p>Email: example@email.com</p>
-<button onclick="showMessage()">Click Me</button>
 
-<p id="message"></p>
+  <!-- Button -->
+  <button onclick="showMessage()">Click Me</button>
+  <p id="message"></p>
 
-<script>
-  function showMessage() {
-    document.getElementById("message").innerText = "You clicked the button! 🚀";
-  }
+  <!-- Form -->
   <h2>Contact Form</h2>
 
-<input type="text" id="name" placeholder="Enter your name"><br><br>
+  <input type="text" id="name" placeholder="Enter your name"><br><br>
 
-<button onclick="submitForm()">Submit</button>
+  <button onclick="submitForm()">Submit</button>
 
-<p id="output"></p>
+  <p id="output"></p>
 
-<script>
-  function submitForm() {
-    var name = document.getElementById("name").value;
-    document.getElementById("output").innerText = "Hello " + name + "!";
-  }
-</script> 
+  <!-- JavaScript (keep at bottom) -->
+  <script>
+    function showMessage() {
+      document.getElementById("message").innerText = "You clicked the button! 🚀";
+    }
+
+    function submitForm() {
+      var name = document.getElementById("name").value;
+      document.getElementById("output").innerText = "Hello " + name + "!";
+    }
+  </script>
+
 </body>
 </html>
