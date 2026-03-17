@@ -44,23 +44,78 @@
       border-radius: 5px;
       border: 1px solid #ccc;
     }
+    .container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #16a085;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #13856b;
+}
+
+.patient {
+  background: #ecf9f6;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
   </style>
 </head>
 
 <body>
 
-  <h1>Hi, I’m Salma 👋</h1>
-  <p>I am learning web development.</p>
+  <body>
 
-  <h2>My Goals</h2>
-  <ul>
-    <li>Build a remote consultation app</li>
-    <li>Learn GitHub and cloud</li>
-  </ul>
+<div class="container">
 
-  <h2>Contact</h2>
-  <p>Email: example@email.com</p>
+  <div class="card">
+    <h1>ConsultRx 🏥</h1>
+    <p>Simple Patient Entry System</p>
+  </div>
 
+  <div class="card">
+    <h2>Patient Entry</h2>
+
+    <input type="text" id="patientName" placeholder="Patient Name"><br>
+    <input type="number" id="age" placeholder="Age"><br>
+
+    <button onclick="addPatient()">Add Patient</button>
+  </div>
+
+  <div class="card">
+    <h2>Patient List</h2>
+    <div id="patientOutput"></div>
+  </div>
+
+</div>
+
+</body>
   <!-- Button -->
   <button onclick="showMessage()">Click Me</button>
   <p id="message"></p>
@@ -86,23 +141,22 @@
 
   <!-- JavaScript (keep at bottom) -->
   <script>
-    function showMessage() {
-      document.getElementById("message").innerText = "You clicked the button! 🚀";
-    }
-
-    function submitForm() {
-      var name = document.getElementById("name").value;
-      document.getElementById("output").innerText = "Hello " + name + "!";
-    }
-    var patients = [];
+var patients = [];
 
 function addPatient() {
   var name = document.getElementById("patientName").value;
   var age = document.getElementById("age").value;
 
-  patients.push("Patient: " + name + " | Age: " + age);
+  var patientText = "Patient: " + name + " | Age: " + age;
 
-  document.getElementById("patientOutput").innerText = patients.join("\n");
+  patients.push(patientText);
+
+  var output = "";
+  for (var i = 0; i < patients.length; i++) {
+    output += "<div class='patient'>" + patients[i] + "</div>";
+  }
+
+  document.getElementById("patientOutput").innerHTML = output;
 }
   </script>
 
