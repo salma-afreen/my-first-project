@@ -73,6 +73,16 @@
   <button onclick="submitForm()">Submit</button>
 
   <p id="output"></p>
+  
+  <h2>Patient Entry</h2>
+
+<input type="text" id="patientName" placeholder="Patient Name"><br><br>
+
+<input type="number" id="age" placeholder="Age"><br><br>
+
+<button onclick="addPatient()">Add Patient</button>
+
+<p id="patientOutput"></p>
 
   <!-- JavaScript (keep at bottom) -->
   <script>
@@ -84,6 +94,13 @@
       var name = document.getElementById("name").value;
       document.getElementById("output").innerText = "Hello " + name + "!";
     }
+    function addPatient() {
+  var name = document.getElementById("patientName").value;
+  var age = document.getElementById("age").value;
+
+  document.getElementById("patientOutput").innerText =
+    "Patient: " + name + " | Age: " + age;
+}
   </script>
 
 </body>
