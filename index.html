@@ -94,12 +94,15 @@
       var name = document.getElementById("name").value;
       document.getElementById("output").innerText = "Hello " + name + "!";
     }
-    function addPatient() {
+    var patients = [];
+
+function addPatient() {
   var name = document.getElementById("patientName").value;
   var age = document.getElementById("age").value;
 
-  document.getElementById("patientOutput").innerText =
-    "Patient: " + name + " | Age: " + age;
+  patients.push("Patient: " + name + " | Age: " + age);
+
+  document.getElementById("patientOutput").innerText = patients.join("\n");
 }
   </script>
 
